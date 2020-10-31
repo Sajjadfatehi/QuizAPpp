@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    >
+
+    <data>
+
+        <variable
+            name="allInformation"
+            type="com.example.quizapp.news.data.modelfromservice.AllInformation" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/serch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+
+            />
+
+        <com.google.android.material.card.MaterialCardView
+
+            app:cardCornerRadius="6dp"
+            android:id="@+id/cardViewCorona"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/serch"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:elevation="4dp"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+
+                    android:id="@+id/tv_case"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tvCase"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="20dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_case_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tvCaseToday"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_case" />
+
+                <TextView
+                    android:id="@+id/tv_deaths"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tvDeaths"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_case_today" />
+
+                <TextView
+                    android:id="@+id/tv_case_deaths_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tvDeathsToday"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_deaths" />
+
+                <TextView
+                    android:id="@+id/tv_recovery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tvRecovery"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_case_deaths_today" />
+
+                <TextView
+                    android:id="@+id/num_case"
+                    android:layout_width="61dp"
+                    android:layout_height="17dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@{String.valueOf(allInformation.cases)}"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_case"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/num_case_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@{String.valueOf(allInformation.todayCases)}"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_case_today"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/num_case" />
+
+                <TextView
+                    android:id="@+id/num_deaths"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@{String.valueOf(allInformation.deaths)}"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_deaths"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/num_case_today" />
+
+                <TextView
+                    android:id="@+id/num_deaths_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@{String.valueOf(allInformation.todayDeaths)}"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_case_deaths_today"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/num_deaths" />
+
+                <TextView
+                    android:id="@+id/num_recovery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@{String.valueOf(allInformation.recovered)}"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_recovery"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/num_deaths_today" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>i
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+            app:layout_constraintTop_toBottomOf="@id/cardViewCorona"
+            android:layout_marginTop="24dp"
+            tools:listitem="@layout/item_corona_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

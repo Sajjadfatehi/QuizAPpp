@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
+    app:startDestination="@id/splashFragment">
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.quizapp.home.SplashFragment"
+        android:label="SplashFragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_newsFagment"
+            app:destination="@id/newsFagment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsFagment"
+        android:name="com.example.quizapp.news.CoronaFagment"
+        android:label="NewsFagment" >
+
+        <action
+            android:id="@+id/action_newsFagment_to_singleCountryFragment"
+            app:destination="@id/singleCountryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/singleCountryFragment"
+        android:name="com.example.quizapp.news.ui.fragment.SingleCountryFragment"
+        android:label="SingleCountryFragment" >
+        <argument
+            android:name="allCountryItem"
+            app:argType="com.example.quizapp.news.data.modelfromservice.AllCountryItem" />
+    </fragment>
+</navigation>

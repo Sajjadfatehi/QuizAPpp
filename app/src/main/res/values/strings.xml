@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+    <string name="tvCase">موارد ابتلا :</string>
+    <string name="tvCaseToday">موارد ابتلا امروز :</string>
+    <string name="tvDeaths">موارد فوت :</string>
+    <string name="tvDeathsToday">موارد فوت امروز :</string>
+    <string name="tvRecovery">بهبود یافتگان :</string>
+
+</resources>
